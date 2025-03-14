@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:02:52 by palu              #+#    #+#             */
-/*   Updated: 2025/03/14 14:48:11 by paulmart         ###   ########.fr       */
+/*   Created: 2025/03/14 12:32:06 by paulmart          #+#    #+#             */
+/*   Updated: 2025/03/14 14:41:09 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SED_HPP
+# define SED_HPP
 
-Zombie::Zombie()
+# include <iostream>
+# include <string>
+# include <iomanip>
+# include <cstdlib>
+# include <fstream>
+
+class Sed
 {
-	std::cout << "A zombie has been created" << std::endl;
-}
+	public :
+		Sed(std::string filename, std::string s1, std::string s2);
+		~Sed();
+		void	replace();
+	private :
+		std::string	_filename;
+		std::string	_s1;
+		std::string	_s2;
+};
 
-void	Zombie::set_name(std::string str)
-{
-	this->_name = str;
-}
-
-
-Zombie::~Zombie()
-{
-	std::cout << this->_name << ": has been destroyed" << std::endl;
-}
-
-void	Zombie::announce()
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif
