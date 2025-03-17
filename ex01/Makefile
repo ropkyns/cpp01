@@ -3,36 +3,50 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: palu <palu@student.42.fr>                  +#+  +:+       +#+         #
+#    By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/07 14:59:58 by palu              #+#    #+#              #
-#    Updated: 2025/03/12 14:11:04 by palu             ###   ########.fr        #
+#    Updated: 2025/03/17 18:46:14 by paulmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =			main.cpp Zombie.cpp zombieHorde.cpp
-OBJ =			$(SRC:.cpp=.o)
+NAME = horde
 
-CC =			c++
+CC = c++
+CFLAGS = -Wall -Wextra -g3 -std=c++98 -I$(INCLUDE_DIR)
 
-FLAG =			-Wall -Wextra -Werror -std=c++98
+INCLUDE_DIR = include/
+SRC_DIR = src/
+OBJ_DIR = obj
 
-RM =			rm -f
+SRC_FILES = \
+    Zombie.cpp \
+    zombieHorde.cpp \
+    main.cpp
+SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
-NAME =			horde
+MANDATORY_SRCS = $(SRC)
 
-all :			$(NAME)
+PMANDATORY =  $(addprefix , $(MANDATORY_SRCS))
+OBJS = $(PMANDATORY:$(SRC_DIR)%.cpp=$(OBJ_DIR)/%.o)
 
-$(NAME) :		$(OBJ)
-					$(CC) $(FLAG) $(OBJ) -o $(NAME)
-clean :
-					$(RM) $(OBJ)
-					$(RM) *~
 
-fclean :		clean
-					$(RM) $(NAME)
+all: $(NAME)
 
-re :			fclean
-					$(MAKE) $(NAME)
+$(OBJ_DIR)/%.o : $(SRC_DIR)%.cpp
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+
+clean:
+	rm -rf $(OBJ_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
 
 .PHONY: all clean fclean re

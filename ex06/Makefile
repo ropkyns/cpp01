@@ -6,33 +6,46 @@
 #    By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 17:29:51 by paulmart          #+#    #+#              #
-#    Updated: 2025/03/17 15:57:27 by paulmart         ###   ########.fr        #
+#    Updated: 2025/03/17 18:42:50 by paulmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =			main.cpp Harl.cpp
-OBJ =			$(SRC:.cpp=.o)
+NAME = harlFilter
 
-CC =			c++
+CC = c++
+CFLAGS = -Wall -Wextra -g3 -std=c++98 -I$(INCLUDE_DIR)
 
-FLAG =			-Wall -Wextra -Werror -std=c++98
+INCLUDE_DIR = include/
+SRC_DIR = src/
+OBJ_DIR = obj
 
-RM =			rm -f
+SRC_FILES = \
+    Harl.cpp \
+    main.cpp
+SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
-NAME =			harlFilter
+MANDATORY_SRCS = $(SRC)
 
-all :			$(NAME)
+PMANDATORY =  $(addprefix , $(MANDATORY_SRCS))
+OBJS = $(PMANDATORY:$(SRC_DIR)%.cpp=$(OBJ_DIR)/%.o)
 
-$(NAME) :		$(OBJ)
-					$(CC) $(FLAG) $(OBJ) -o $(NAME)
-clean :
-					$(RM) $(OBJ)
-					$(RM) *~
 
-fclean :		clean
-					$(RM) $(NAME)
+all: $(NAME)
 
-re :			fclean
-					$(MAKE) $(NAME)
+$(OBJ_DIR)/%.o : $(SRC_DIR)%.cpp
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+
+clean:
+	rm -rf $(OBJ_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
 
 .PHONY: all clean fclean re

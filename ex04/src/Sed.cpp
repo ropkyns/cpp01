@@ -6,7 +6,7 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 12:32:39 by paulmart          #+#    #+#             */
-/*   Updated: 2025/03/14 16:25:29 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/17 18:49:44 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void	Sed::replace()
 	if (!output.is_open())
 	{
 		std::cout << "Error: could not create file" << std::endl;
+		return ;
+	}
+	if(this->_s1.empty())
+	{
+		std::cout << "Error: s1 is empty" << std::endl;
 		return ;
 	}
 	std::string	line;
