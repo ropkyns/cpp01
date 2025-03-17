@@ -6,7 +6,7 @@
 #    By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 17:29:51 by paulmart          #+#    #+#              #
-#    Updated: 2025/03/17 15:48:45 by paulmart         ###   ########.fr        #
+#    Updated: 2025/03/17 15:57:27 by paulmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FLAG =			-Wall -Wextra -Werror -std=c++98
 
 RM =			rm -f
 
-NAME =			harl
+NAME =			harlFilter
 
 all :			$(NAME)
 

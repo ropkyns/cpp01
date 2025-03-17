@@ -6,7 +6,7 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 17:33:54 by paulmart          #+#    #+#             */
-/*   Updated: 2025/03/17 15:55:48 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:59:41 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ void	Harl::complain(std::string level)
 	{
 		if(level == lvl[i])
 		{
-			(this->*ptr[i])();
+			while(i < 4)
+			{
+				(this->*ptr[i])();
+				i++;
+			}
 			return ;
 		}
 	}
