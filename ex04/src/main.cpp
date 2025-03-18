@@ -6,11 +6,11 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 12:30:33 by paulmart          #+#    #+#             */
-/*   Updated: 2025/03/14 16:07:33 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:56:27 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#include "../include/Sed.hpp"
 
 int	main(int argc, char **argv)
 {

@@ -6,11 +6,11 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 12:32:39 by paulmart          #+#    #+#             */
-/*   Updated: 2025/03/17 18:49:44 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:56:32 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#include "../include/Sed.hpp"
 
 Sed::Sed(std::string filename, std::string s1, std::string s2) : _filename(filename), _s1(s1), _s2(s2)
 {

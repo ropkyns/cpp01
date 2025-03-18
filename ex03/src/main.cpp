@@ -6,12 +6,12 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:17:49 by palu              #+#    #+#             */
-/*   Updated: 2025/03/18 12:38:42 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:55:16 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "../include/HumanA.hpp"
+#include "../include/HumanB.hpp"
 
 int main()
 {

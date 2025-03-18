@@ -6,11 +6,11 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:18:52 by palu              #+#    #+#             */
-/*   Updated: 2025/03/17 18:49:07 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:54:59 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "../include/HumanB.hpp"
 
 HumanB::HumanB(std::string name)
 {

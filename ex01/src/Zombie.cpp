@@ -6,11 +6,11 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 15:02:52 by palu              #+#    #+#             */
-/*   Updated: 2025/03/14 14:48:11 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:55:49 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../include/Zombie.hpp"
 
 Zombie::Zombie()
 {
