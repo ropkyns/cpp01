@@ -6,14 +6,14 @@
 #    By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 12:30:28 by paulmart          #+#    #+#              #
-#    Updated: 2025/03/17 18:41:59 by paulmart         ###   ########.fr        #
+#    Updated: 2025/03/18 12:53:30 by paulmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Sed
 
 CC = c++
-CFLAGS = -Wall -Wextra -g3 -std=c++98 -I$(INCLUDE_DIR)
+CFLAGS = -Wall -Wextra -g3 -std=c++98 -I $(INCLUDE_DIR)
 
 INCLUDE_DIR = include/
 SRC_DIR = src/
